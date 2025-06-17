@@ -16,7 +16,7 @@ const [spinner,setSpinner]=useState("fas fa-spinner")
  async function handlechange(event){
     const value=event.target.value
      console.log(value)
-    if ((event.key ==='Enter')||((value==="Fast")||value==="fast")) {
+    if ((event.key ==='Enter')&&((value==="Fast")||value==="fast")) {
      setInputvalue(event.target.value)
    const{data}=await axios.get("https://omdbapi.com/?apikey=4cfe7eb4&s=fast")
   console.log(data)
@@ -85,8 +85,7 @@ const [spinner,setSpinner]=useState("fas fa-spinner")
 </nav>
      <div className="header"> 
      <div className="searchInput__wrapper">
-     <input  type="text" className="inputsearch"   placeholder="Search by Fast"  onKeyDown={handlechange}
-      >
+     <input  type="text" className="inputsearch"   placeholder="Search by Fast"  onKeyDown={handlechange}>
     </input>
   <button className="button_search"><FontAwesomeIcon icon="fas fa-search"  className="fa-search" onClick={SearchMove} /></button>    
     </div>
